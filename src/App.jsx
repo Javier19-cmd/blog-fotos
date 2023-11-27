@@ -11,7 +11,7 @@ function App() {
 
       <div className="sub-title">
         <p>
-          Por: Javier Sebastián Valle Balsells
+          Por: Javier Sebastián Valle Balsellss
         </p>
       </div>
     </>
