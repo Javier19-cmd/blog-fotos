@@ -5,3 +5,20 @@
 .sub-title {
   text-align: center;
 }
+
+/* Estilo para el contenedor de la galería */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+  gap: 15px; /* Espaciado entre las imágenes */
+  max-width: 800px; /* Ancho máximo del contenedor de la galería */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Añade un relleno alrededor del contenedor */
+}
+
+/* Estilo para las imágenes en la galería */
+.image-gallery img {
+  max-width: 100%; /* Ajusta el tamaño máximo al ancho del contenedor */
+  height: auto; /* Permite que la altura se ajuste proporcionalmente al ancho */
+  display: block; /* Elimina el espacio adicional debajo de las imágenes */
+}
