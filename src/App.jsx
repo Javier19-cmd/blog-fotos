@@ -6,7 +6,7 @@ function App() {
     <>
       
       <div className='title'>
-      <h1>¡Hola!, bienvenid@ a mi blog personal</h1>
+      <h1>¡Hola!, bienvenid@ a mi blog de fotografía</h1>
       </div>
 
       <div className="sub-title">
