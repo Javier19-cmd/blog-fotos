@@ -36,6 +36,12 @@ function App() {
           <img key={index} src={image} alt={`Image ${index}`} />
         ))}
       </div>
+
+      <div className="footer">
+        <p>
+          Derechos reservados © 2024
+        </p>
+      </div>
     </>
   )
 }

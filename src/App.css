@@ -25,6 +25,29 @@
   display: block; /* Elimina el espacio adicional debajo de las imágenes */
 }
 
+/* Estilos del footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+/* Estilos para los enlaces en el footer (opcional) */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 
 /* Media query para pantallas más pequeñas */
 @media (max-width: 600px) {
@@ -39,5 +62,15 @@
   .sub-title {
     text-align: center;
     font-size: 16px;
+  }
+
+  .footer {
+    padding: 10px; /* Reduce el padding en pantallas más pequeñas */
+    left: 0;
+  }
+
+  .footer a {
+    margin: 0 5px; /* Reduce el margen entre enlaces en pantallas más pequeñas */
+    left: 0;
   }
 }
