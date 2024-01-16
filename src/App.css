@@ -20,10 +20,28 @@
 
 /* Estilo para las imágenes en la galería */
 .image-gallery img {
-  max-width: 100%; /* Ajusta el tamaño máximo al ancho del contenedor */
-  height: auto; /* Permite que la altura se ajuste proporcionalmente al ancho */
+  width: 200px; /* Establece el ancho deseado para todas las imágenes */
+  height: 200px; /* Establece la altura deseada para todas las imágenes */
+  object-fit: cover; /* Mantiene la relación de aspecto y cubre completamente el contenedor */
   display: block; /* Elimina el espacio adicional debajo de las imágenes */
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave a la propiedad transform */
 }
+
+/* Animación cuando se pasa el mouse sobre una imagen */
+.image-gallery img:hover {
+  transform: scale(1.1); /* Escala la imagen al 110% de su tamaño original */
+}
+
+/* Otra animación cuando se pasa el mouse sobre una imagen */
+.image-gallery img:hover {
+  filter: grayscale(100%); /* Convierte la imagen en escala de grises */
+}
+
+/* Otra animación cuando se pasa el mouse sobre una imagen */
+.image-gallery img:hover {
+  opacity: 0.8; /* Reduce la opacidad de la imagen al 80% */
+}
+
 
 /* Estilos del footer */
 .footer {
