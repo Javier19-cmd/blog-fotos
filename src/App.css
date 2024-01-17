@@ -92,18 +92,6 @@
   left: 0;
 }
 
-/* Estilos para los enlaces en el footer (opcional) */
-.footer a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-
 /* Media query para pantallas más pequeñas */
 @media (max-width: 600px) {
   .image-gallery {
@@ -119,13 +107,4 @@
     font-size: 16px;
   }
 
-  .footer {
-    padding: 10px; /* Reduce el padding en pantallas más pequeñas */
-    left: 0;
-  }
-
-  .footer a {
-    margin: 0 5px; /* Reduce el margen entre enlaces en pantallas más pequeñas */
-    left: 0;
-  }
 }

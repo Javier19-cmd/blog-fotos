@@ -83,12 +83,6 @@ function App() {
         )}
 
       </div>
-
-      <div className="footer">
-        <p>
-          Derechos reservados © 2024
-        </p>
-      </div>
     </>
   )
 }
