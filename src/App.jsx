@@ -21,13 +21,34 @@ import image17 from './fotos/17.jpg';
 function App() {
 
   const [imageList, setImageList] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
 
   useEffect(() => {
     setImageList([image, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17]);
     
   }, []);
 
-  console.log(imageList);
+  const handleImageClick = (imageUrl) => {
+    setModalOpen(true);
+    setSelectedImage(imageUrl);
+  };
+
+
+  const getEffectClass = (index) => {
+    // Devuelve una clase específica de efecto según el índice
+    if (index % 5 === 0) {
+      return 'zoom-in';
+    } else if (index % 5 === 1) {
+      return 'grayscale';
+    } else if (index % 5 === 2) {      
+      return 'blur';
+    } else if (index % 5 === 3) {
+      return 'zoom-out';
+    } else {
+      return 'rotate';
+    }
+  };
 
   return (
     <>
@@ -44,8 +65,21 @@ function App() {
 
       <div className="image-gallery">
         {imageList.map((image, index) => (
-          <img key={index} src={image} alt={`Image ${index}`} />
+          <img 
+            key={index} 
+            src={image} 
+            alt={`Image ${index}`}
+            className={`effect-${getEffectClass(index)}`}
+            onClick={() => handleImageClick(image)}
+            />
         ))}
+
+        {modalOpen && (
+          <div className="modal-background" onClick={() => setModalOpen(false)}>
+            <img src={selectedImage} alt="Full Image" className="full-image" />
+          </div>
+        )}
+
       </div>
 
       <div className="footer">
