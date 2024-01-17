@@ -49,6 +49,16 @@
   transform: rotate(45deg);
 }
 
+.image-gallery img.effect-zoom-in:hover {
+  transform: scale(1.2);
+}
+
+.image-gallery img.effect-zoom-out:hover {
+  transform: scale(0.8);
+}
+
+
+
 /* Estilo para el modal y el fondo oscuro */
 .modal-background {
   position: fixed;

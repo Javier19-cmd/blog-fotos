@@ -41,12 +41,14 @@ function App() {
       return 'zoom-in';
     } else if (index % 5 === 1) {
       return 'grayscale';
-    } else if (index % 5 === 2) {      
+    } else if (index % 5 === 2) {
       return 'blur';
     } else if (index % 5 === 3) {
       return 'zoom-out';
-    } else {
+    } else if (index % 5 === 4) {
       return 'rotate';
+    }else {
+      return 'zoom-in';
     }
   };
 
