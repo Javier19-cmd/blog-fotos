@@ -17,6 +17,7 @@ import image14 from './fotos/14.jpg';
 import image15 from './fotos/15.jpg';
 import image16 from './fotos/16.jpg';
 import image17 from './fotos/17.jpg';
+import image18 from './fotos/18.jpg';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState('');
 
   useEffect(() => {
-    setImageList([image, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17]);
+    setImageList([image, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18]);
     
   }, []);
 
