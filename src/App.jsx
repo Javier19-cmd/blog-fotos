@@ -1,4 +1,4 @@
-import './App.css'
+import './App.css';
 import { useEffect, useState } from 'react';
 import image from './fotos/1.jpg';
 import image2 from './fotos/2.jpg';
@@ -20,14 +20,12 @@ import image17 from './fotos/17.jpg';
 import image18 from './fotos/18.jpg';
 
 function App() {
-
   const [imageList, setImageList] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
 
   useEffect(() => {
     setImageList([image, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18]);
-    
   }, []);
 
   const handleImageClick = (imageUrl) => {
@@ -35,37 +33,23 @@ function App() {
     setSelectedImage(imageUrl);
   };
 
-
   const getEffectClass = (index) => {
-    // Devuelve una clase específica de efecto según el índice
-    if (index % 5 === 0) {
-      return 'zoom-in';
-    } else if (index % 5 === 1) {
-      return 'grayscale';
-    } else if (index % 5 === 2) {
-      return 'blur';
-    } else if (index % 5 === 3) {
-      return 'zoom-out';
-    } else if (index % 5 === 4) {
-      return 'rotate';
-    }else {
-      return 'zoom-in';
+    switch (index % 5) {
+      case 0: return 'zoom-in';
+      case 1: return 'grayscale';
+      case 2: return 'blur';
+      case 3: return 'zoom-out';
+      case 4: return 'rotate';
+      default: return '';
     }
   };
 
   return (
     <>
-      
-      <div className='title'>
-      <h1>¡Hola!, bienvenid@ a mi blog de fotografía</h1>
-      </div>
-
-      <div className="sub-title">
-        <p>
-          Por: Javier Sebastián Valle Balsells
-        </p>
-      </div>
-
+      <header className='title'>
+        <h1>¡Hola!, bienvenid@ a mi blog de fotografía</h1>
+        <p className="sub-title">Por: Javier Sebastián Valle Balsells</p>
+      </header>
       <div className="image-gallery">
         {imageList.map((image, index) => (
           <img 
@@ -74,18 +58,19 @@ function App() {
             alt={`Image ${index}`}
             className={`effect-${getEffectClass(index)}`}
             onClick={() => handleImageClick(image)}
-            />
+          />
         ))}
-
-        {modalOpen && (
-          <div className="modal-background" onClick={() => setModalOpen(false)}>
-            <img src={selectedImage} alt="Full Image" className="full-image" />
-          </div>
-        )}
-
       </div>
+      {modalOpen && (
+        <div className="modal-background" onClick={() => setModalOpen(false)}>
+          <img src={selectedImage} alt="Full Image" className="full-image" />
+        </div>
+      )}
+      <footer className="footer">
+        <p>© 2024 Javier Sebastián Valle Balsells. Todos los derechos reservados.</p>
+      </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
