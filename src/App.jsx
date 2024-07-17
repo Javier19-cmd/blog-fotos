@@ -65,9 +65,9 @@ function App() {
           <img src={selectedImage} alt="Full Image" className="full-image" />
         </div>
       )}
-      {/* <footer className="footer">
+      <footer className="footer">
         <p>© 2024 Javier Sebastián Valle Balsells. Todos los derechos reservados.</p>
-      </footer> */}
+      </footer>
     </>
   );
 }
