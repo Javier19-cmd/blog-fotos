@@ -24,6 +24,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState('');
 
   useEffect(() => {
+    // Array de imágenes
     setImageList([image, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17]);
   }, []);
 
@@ -32,43 +33,42 @@ function App() {
     setSelectedImage(imageUrl);
   };
 
-  const getEffectClass = (index) => {
-    switch (index % 5) {
-      case 0: return 'zoom-in';
-      case 1: return 'grayscale';
-      case 2: return 'blur';
-      case 3: return 'zoom-out';
-      case 4: return 'rotate';
-      default: return '';
-    }
-  };
-
   return (
-    <>
-      <header className='title'>
-        <h1>¡Hola!, bienvenid@ a mi blog de fotografía</h1>
-        <p className="sub-title">Por: Javier Sebastián Valle Balsells</p>
+    <div className="app-container">
+      <header className='header'>
+        <h1 className="main-title">Javier Valle</h1>
+        <p className="sub-title">PORTAFOLIO DE FOTOGRAFÍA</p>
+        <div className="divider"></div>
       </header>
-      <div className="image-gallery">
-        {imageList.map((image, index) => (
-          <img 
-            key={index} 
-            src={image} 
-            alt={`Image ${index}`}
-            className={`effect-${getEffectClass(index)}`}
-            onClick={() => handleImageClick(image)}
-          />
+
+      <div className="gallery-container">
+        {imageList.map((imgSrc, index) => (
+          <div key={index} className="image-wrapper" onClick={() => handleImageClick(imgSrc)}>
+            <img 
+              src={imgSrc} 
+              alt={`Fotografía ${index + 1} por Javier Valle`}
+              loading="lazy"
+            />
+            <div className="overlay">
+              <span>Ver foto</span>
+            </div>
+          </div>
         ))}
       </div>
+
       {modalOpen && (
         <div className="modal-background" onClick={() => setModalOpen(false)}>
-          <img src={selectedImage} alt="Full Image" className="full-image" />
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage} alt="Full Size" className="full-image" />
+            <button className="close-btn" onClick={() => setModalOpen(false)}>×</button>
+          </div>
         </div>
       )}
+
       <footer className="footer">
         <p>© 2024 Javier Sebastián Valle Balsells. Todos los derechos reservados.</p>
       </footer>
-    </>
+    </div>
   );
 }
 
